@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chokniphat Pitakkorpol - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav id="navbar" class="fixed w-full bg-white z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold scg-blue-text">Portfolio.</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-blue-600">About Me</a>
+                <a href="#projects" class="hover:text-blue-600">Projects</a>
+                <a href="#experience" class="hover:text-blue-600">Experience</a>
+                <a href="#contact" class="hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center">
+            <div class="md:w-1/2 mt-10 md:mt-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">สวัสดีครับ <br>ผม <span class="scg-blue-text">โชคนิพัทธ์ พิทักษ์ก่อพล</span></h1>
+                <p class="text-lg text-gray-600 mb-6">
+                    นักศึกษาชั้นปีสุดท้ายจาก คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมอิเล็กทรอนิกส์และโทรคมนาคม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (KMUTT) <br>
+                    ซึ่งกำลังจะสำเร็จการศึกษาในเดือนมิถุนายน 2569 นี้ครับ 
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#projects" class="scg-blue-bg text-white px-6 py-3 rounded-lg transition text-center">ดูผลงาน</a>
+                    <a href="#contact" class="border-2 border-gray-300 px-6 py-3 rounded-lg hover:border-blue-600 hover:text-blue-600 transition text-center">ติดต่อ</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="w-64 h-64 rounded-full flex items-center justify-center shadow-xl overflow-hidden">
+                    <img src="S__136667138.jpg" alt="Profile Picture" class="w-full h-full object-cover object-top">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 text-center scg-blue-text">Projects</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="project-card border rounded-xl p-6 bg-white">
+                    <div class="text-4xl text-blue-500 mb-4"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3 class="text-2xl font-bold mb-2">Rentflow - ERP Prototype</h3>
+                    <p class="text-gray-600 mb-4">พัฒนาระบบจัดการบิลและสัญญาเช่าอัตโนมัติ เพื่อลดขั้นตอนการทำงานแบบ Manual</p>
+                    
+                    <a href="rentflow-detail.html" class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-200 transition">
+                        ดูรายละเอียดโปรเจกต์ <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="project-card border rounded-xl p-6 bg-white">
+                    <div class="text-4xl text-blue-500 mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="text-2xl font-bold mb-2">Secure VPN System (Senior Project)</h3>
+                    <p class="text-gray-600 mb-4">ออกแบบและติดตั้งระบบเครือข่ายส่วนตัวเสมือน (VPN) ที่มีความปลอดภัยสูง</p>
+                    <ul class="list-disc list-inside text-sm text-gray-700 mb-4 space-y-1">
+                        <li><strong>Tech Stack:</strong> WireGuard, Flask, AWS</li>
+                        <li><strong>Security:</strong> จัดการระบบยืนยันตัวตน (MFA) ด้วย Keycloak</li>
+                        <li><strong>Impact:</strong> ทำให้เข้าถึงระบบเครือข่ายองค์กรได้อย่างปลอดภัยจากภายนอก</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">ประสบการณ์ (Experience)</h2>
+            
+            <div class="max-w-5xl mx-auto bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100">
+                <div class="flex flex-wrap justify-between items-start mb-8 border-b pb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold scg-blue-text">Network Engineer (Intern)</h3>
+                        <p class="text-lg font-semibold text-gray-700">TCC Technology</p>
+                        <p class="text-sm text-gray-500">มิถุนายน – พฤศจิกายน 2025</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-right">
+                        <span class="bg-blue-50 text-blue-700 px-4 py-1 rounded-full text-sm font-bold block mb-2">
+                            Mega Project: One Bangkok
+                        </span>
+                        <p class="text-xs text-gray-400">ICT Department (Enterprise Operation)</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10">
+                    
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-600 p-2 rounded-lg mr-3">
+                                <i class="fa-solid fa-tower-broadcast text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-xl text-gray-800">Inspector (DAS & Antenna)</h4>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 text-sm leading-relaxed">
+                            <li>• <strong>QC Coverage:</strong> รับผิดชอบตรวจสอบคุณภาพงานติดตั้งระบบ DAS (Distributed Antenna System) ครอบคลุมเสาอากาศกว่า 238 ต้น ใน 12 Sector กระจายตามโซนที่พักอาศัย (R1-R3), อาคารสำนักงาน (O1-O3), ศูนย์การค้า (Forum) และชั้นจอดรถใต้ดิน (Carpark) </li>
+                            <li>• <strong>Technical Compliance:</strong> ตรวจสอบความถูกต้องของอุปกรณ์ทั้งสาย Feeder, สาย Jumper, หัว Connector และ Splitter Box ให้ตรงตามแบบ As-built และมาตรฐานทางวิศวกรรมของ Huawei และ AIS </li>
+                            <li>• <strong>Signal Analysis:</strong> เข้าร่วมทดสอบประสิทธิภาพโครงข่ายผ่านการทำ Walk Test และวิเคราะห์ค่าพารามิเตอร์ทางไฟฟ้า เช่น VSWR, Return Loss และ Cable Loss ในทุกย่านความถี่ (900MHz, 1800MHz, 2100MHz และ 2600MHz) โดยใช้ซอฟต์แวร์ Handheld </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-600 p-2 rounded-lg mr-3">
+                                <i class="fa-solid fa-network-wired text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-xl text-gray-800">Fiber Optic Infrastructure</h4>
+                        </div>
+                        <ul class="space-y-3 text-gray-600 text-sm leading-relaxed">
+                            <li>• <strong>Infrastructure Maintenance:</strong> ปฏิบัติงานในห้อง Data Center และ Main Comm Room เพื่อดำเนินการ Splicing และ Patching สายไฟเบอร์ออปติกตามผัง Core ที่ลูกค้ากำหนด (เช่น งานระบบของ 7-Eleven) </li>
+                            <li>• <strong>Advanced Troubleshooting:</strong> วิเคราะห์และแก้ไขปัญหาจุดที่สัญญาณแสงหาย (Signal Drop) โดยใช้เครื่องมือวัดระดับสูงอย่าง <strong>OTDR (Optical Time Domain Reflectometer)</strong> และ Laser Test เพื่อระบุตำแหน่งสายขาดหรือจุดที่เชื่อมต่อผิดพลาด </li>
+                            <li>• <strong>Network Deployment:</strong> สนับสนุนการติดตั้งและตรวจสอบอุปกรณ์ Access Point (WIFI) ในพื้นที่โครงการ พร้อมทดสอบความเสถียรของสัญญาณผ่านแอปพลิเคชัน nPerf </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-10 bg-green-50 border-l-4 border-green-500 p-5 rounded-r-xl">
+                    <h5 class="font-bold text-green-700 mb-1 flex items-center">
+                        <i class="fa-solid fa-square-poll-vertical mr-2"></i> ผลลัพธ์จากการปฏิบัติงาน (Key Accomplishments)
+                    </h5>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        บริหารจัดการรายงานความคืบหน้า (Progress Report) และฐานข้อมูลภาพติดตั้งอุปกรณ์ผ่าน Dashboard ใน Excel 
+                        ทำให้ทีมวิศวกรสามารถติดตาม Defect หน้างานได้อย่างรวดเร็วและแม่นยำ ช่วยลดความคลาดเคลื่อนของข้อมูล 
+                        และส่งผลให้การส่งมอบงานเอกสาร PAT (Provisional Acceptance Test) ของโครงการเป็นไปตามกำหนดเวลา
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-gray-800 text-white py-12 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-6">ติดต่อ</h2>
+            <p class="mb-2"><i class="fa-solid fa-location-dot mr-2"></i> Rayong, Thailand</p>
+            <p class="mb-2"><i class="fa-solid fa-phone mr-2"></i> 061-518-3027</p>
+            <p class="mb-6"><i class="fa-solid fa-envelope mr-2"></i> chokniphat.p@gmail.com</p>
+            <div class="text-center mt-8">
+                <button onclick="showEmailAlert()" class="bg-white text-gray-800 font-bold py-2 px-8 rounded-lg hover:bg-gray-100 transition shadow-md">
+                    ส่งอีเมล
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

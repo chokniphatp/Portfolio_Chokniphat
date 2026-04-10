@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentflow Detail - Chokniphat Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex items-center">
+            <a href="index.html" class="text-blue-600 hover:text-blue-800 transition flex items-center">
+                <i class="fa-solid fa-chevron-left mr-2"></i> กลับหน้าหลัก
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <header class="mb-12">
+            <h1 class="text-4xl font-bold scg-blue-text mb-4">Rentflow - ERP Prototype</h1>
+            <p class="text-xl text-gray-600">ระบบบริหารจัดการหอพักและคอนโดมิเนียมแบบครบวงจร พัฒนาด้วย Google Apps Script</p>
+        </header>
+
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-600 pl-4">รูปภาพโครงการ (Gallery)</h2>
+            
+            <div class="space-y-8">
+                <div class="slider-section">
+                    <h3 class="text-xl font-semibold text-gray-700 flex items-center mb-4">
+                        <i class="fa-solid fa-user-tie scg-blue-text mr-3"></i> 1. มุมมองเจ้าของหอ (Owner View)
+                    </h3>
+                    <p class="text-gray-600 mb-6 pl-9">แสดงหน้า Dashboard หลักสำหรับบริหารจัดการ, การจัดการห้องพัก, และระบบสร้างใบแจ้งหนี้อัตโนมัติ</p>
+                    
+                    <div class="relative group px-9">
+                        <button onclick="scrollSlider('owner-slider', -1)" class="slider-arrow left-0">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        
+                        <div id="owner-slider" class="slider-container">
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 0)">
+                                <img src="images_rentflow/owner/owner-1.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 1)">
+                                <img src="images_rentflow/owner/owner-2.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 2)">
+                                <img src="images_rentflow/owner/owner-3.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 3)">
+                                <img src="images_rentflow/owner/owner-4.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 4)">
+                                <img src="images_rentflow/owner/owner-5.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 5)">
+                                <img src="images_rentflow/owner/owner-6.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 6)">
+                                <img src="images_rentflow/owner/owner-7.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 7)">
+                                <img src="images_rentflow/owner/owner-8.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 8)">
+                                <img src="images_rentflow/owner/owner-9.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 9)">
+                                <img src="images_rentflow/owner/owner-10.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 10)">
+                                <img src="images_rentflow/owner/owner-11.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 11)">
+                                <img src="images_rentflow/owner/owner-12.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('owner-slider', 12)">
+                                <img src="images_rentflow/owner/owner-13.jpg" class="gallery-img">
+                            </div>
+                        </div>
+
+                        <button onclick="scrollSlider('owner-slider', 1)" class="slider-arrow right-0">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <hr class="border-gray-100 mx-9 my-2">
+
+                <div class="slider-section">
+                    <h3 class="text-xl font-semibold text-gray-700 flex items-center mb-4">
+                        <i class="fa-solid fa-user-circle scg-blue-text mr-3"></i> 2. มุมมองผู้เช่า (Tenant View)
+                    </h3>
+                    <p class="text-gray-600 mb-6 pl-9">แสดงหน้าจอการเข้าสู่ระบบ, การชำระใบแจ้งหนี้, ประวัติการชำระเงินในฝั่งผู้เช่า (ยังไม่ได้ทำ), และแจ้งปัญหา (ยังไม่ได้ทำ)</p>
+                    
+                    <div class="relative group px-9">
+                        <button onclick="scrollSlider('tenant-slider', -1)" class="slider-arrow left-0">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        
+                        <div id="tenant-slider" class="slider-container">
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('tenant-slider', 0)">
+                                <img src="images_rentflow/tenant/tenant-1.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('tenant-slider', 1)">
+                                <img src="images_rentflow/tenant/tenant-2.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('tenant-slider', 2)">
+                                <img src="images_rentflow/tenant/tenant-3.jpg" class="gallery-img">
+                            </div>
+                            <div class="gallery-item-container min-w-[calc(33.333%-16px)] cursor-pointer" onclick="openLightbox('tenant-slider', 3)">
+                                <img src="images_rentflow/tenant/tenant-4.jpg" class="gallery-img">
+                            </div>
+                        </div>
+
+                        <button onclick="scrollSlider('tenant-slider', 1)" class="slider-arrow right-0">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="md:col-span-2 space-y-8">
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">ที่มาและความสำคัญ (Problem)</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        ปัญหาเดิมของการจัดการหอพักคือการบันทึกข้อมูลด้วยมือ (Manual) 
+                        ทำให้เกิดความผิดพลาดในการคำนวณค่าน้ำ-ค่าไฟ และความล่าช้าในการจัดส่งใบแจ้งหนี้ให้ผู้เช่า 
+                        ผมจึงออกแบบระบบนี้เพื่อลดขั้นตอนที่ซ้ำซ้อนและเพิ่มความแม่นยำของข้อมูล
+                    </p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">การแก้ปัญหา (Solution)</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Automation:</strong> ระบบสร้างใบแจ้งหนี้อัตโนมัติจากฐานข้อมูล Google Sheets</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span><strong>Centralized Data:</strong> รวมศูนย์ข้อมูลสัญญาเช่าและสถานะการจ่ายเงินไว้ที่เดียว</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border h-fit relative">
+                <h3 class="font-bold mb-4 text-lg">Tech Stack</h3>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded text-xs font-bold">JavaScript (GAS)</span>
+                    <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded text-xs font-bold">HTML5</span>
+                    <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded text-xs font-bold">CSS3</span>
+                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-bold">Google Sheets API</span>
+                </div>
+
+                <h3 class="font-bold mb-4 text-lg">ลองใช้งานจริง</h3>
+                
+                <div class="space-y-3 relative">
+                    <button onclick="toggleLoginPopup()" class="w-full text-center border-2 border-blue-600 text-blue-600 font-bold py-2 rounded-xl hover:bg-blue-50 transition flex items-center justify-center">
+                        <i class="fa-solid fa-key mr-2"></i> ข้อมูลเข้าใช้งานทดสอบ
+                    </button>
+
+                    <div id="loginPopup" class="hidden absolute bottom-full left-0 mb-4 w-full bg-white border-2 border-blue-100 shadow-xl rounded-2xl p-4 z-20 animate-fade-in">
+                        <div class="text-sm space-y-2">
+                            <div class="flex justify-between border-b pb-1">
+                                <span class="text-gray-500">Username:</span>
+                                <span class="font-mono font-bold text-blue-700">owner_a</span>
+                            </div>
+                            <div class="flex justify-between border-b pb-1">
+                                <span class="text-gray-500">Password:</span>
+                                <span class="font-mono font-bold text-blue-700">1234</span>
+                            </div>
+
+                            <div class="pt-1">
+                                <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Access for:</span>
+                                <div class="text-xs font-bold scg-blue-text flex items-center">
+                                    <i class="fa-solid fa-user-tie mr-1"></i> Owner View (เจ้าของหอพัก)
+                                </div>
+                            </div>
+
+                            <p class="text-[10px] text-red-500 mt-2 leading-tight border-t pt-2">
+                                *หมายเหตุ: ข้อมูลนี้เป็นเพียงระบบต้นแบบ (Prototype) เพื่อความเสถียรของระบบตัวอย่าง **กรุณาอย่าแก้ไขหรือลบรายละเอียดใดๆ** ภายในระบบ <br> เลือกข้อมูลในเดือนธันวาคม ปี 2025
+                            </p>
+                        </div>
+                        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-r-2 border-b-2 border-blue-100 rotate-45"></div>
+                    </div>
+
+                    <a href="https://script.google.com/macros/s/AKfycbx7I7ljCcUkD-0Jf5xO5onKDZizK44mLrpcRn9HjZW6oBoPsoDK1st-nLTmz7UBmTi1/exec" target="_blank" class="block w-full text-center scg-blue-bg text-white font-bold py-3 rounded-xl hover:opacity-90 transition shadow-lg">
+                        <i class="fa-solid fa-external-link mr-2"></i> ไปยังระบบ Rentflow
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 border-t mt-20 text-center text-gray-500">
+        <p>© 2026 Chokniphat Pitakkorpol. All rights reserved.</p>
+    </footer>
+    <!--Modal (หน้าต่างป๊อปอัพ) -->
+    <div id="imageModal" class="hidden fixed inset-0 bg-black/95 z-[100] flex flex-col items-center justify-center p-4">
+        
+        <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white text-5xl hover:text-gray-300 transition z-[110]">&times;</button>
+        
+        <button onclick="changeLightboxImage(-1)" class="absolute left-4 text-white text-5xl p-2 hover:bg-white/10 rounded-full transition z-[110]">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        
+        <img id="modalImg" src="" class="max-w-full max-h-[85vh] object-contain shadow-2xl transition-all duration-300">
+        
+        <button onclick="changeLightboxImage(1)" class="absolute right-4 text-white text-5xl p-2 hover:bg-white/10 rounded-full transition z-[110]">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

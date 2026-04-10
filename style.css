@@ -1,0 +1,146 @@
+/* ตั้งค่า Font ภาษาไทยและระบบเลื่อนหน้าเว็บแบบนุ่มนวล */
+body {
+    font-family: 'Prompt', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* สีน้ำเงินเข้ม สไตล์องค์กร (SCG Blue) */
+.scg-blue-text {
+    color: #1f3a93;
+}
+
+.scg-blue-bg {
+    background-color: #1f3a93;
+}
+
+.scg-blue-bg:hover {
+    background-color: #15296e;
+}
+
+/* เอฟเฟกต์ Animation สำหรับการ์ดผลงาน */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px); /* เด้งขึ้นเล็กน้อย */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* เพิ่มเงาให้ดูมีมิติ */
+}
+
+/* คลาสที่จะถูก JavaScript สั่งเพิ่มเข้ามาตอนเลื่อนจอลง (เพื่อให้เมนูด้านบนเบลอและมีเงา) */
+.navbar-scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+/* Slider Styling */
+.slider-container {
+    display: flex;
+    gap: 24px;
+    overflow-x: hidden; /* ซ่อน scrollbar */
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+
+/* ปุ่มลูกศร */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #eee;
+    opacity: 0; /* ซ่อนไว้ก่อน จะแสดงเมื่อเอาเมาส์มาวางในโซนรูป */
+}
+
+.group:hover .slider-arrow {
+    opacity: 1; /* แสดงลูกศรเมื่อเอาเมาส์มาชี้ที่ส่วนรูป */
+}
+
+.slider-arrow:hover {
+    background-color: #1f3a93;
+    color: white;
+}
+
+.slider-arrow.left-0 { left: -5px; }
+.slider-arrow.right-0 { right: -5px; }
+
+/* ปรับความกว้างของแต่ละรูปใน Slider (ให้แสดง 3 รูปพอดี) */
+.gallery-item-container {
+    flex: 0 0 calc(33.333% - 16px); /* 3 รูปต่อแถว ลบด้วยระยะห่าง */
+    background-color: #f3f4f6;
+    border-radius: 0.75rem;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e5e7eb;
+}
+
+/* รองรับมือถือ (ให้แสดงรูปเดียว) */
+@media (max-width: 768px) {
+    .gallery-item-container {
+        flex: 0 0 100%;
+    }
+    .slider-arrow {
+        opacity: 1; /* บนมือถือให้แสดงลูกศรตลอดเวลา */
+    }
+}
+
+/* สไตล์เพิ่มเติมสำหรับ Lightbox */
+#imageModal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ปรับปรุง Slider ให้ซ่อน Scrollbar แต่ยังเลื่อนได้ */
+.slider-container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto; /* เปลี่ยนเป็น auto เพื่อให้รองรับคำสั่ง scroll */
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    -ms-overflow-style: none;  /* สำหรับ IE/Edge */
+    scrollbar-width: none;  /* สำหรับ Firefox */
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none; /* สำหรับ Chrome/Safari */
+}
+
+.gallery-item-container {
+    transition: transform 0.2s;
+}
+
+.gallery-item-container:hover {
+    transform: scale(1.02);
+}
+
+/* Animation สำหรับ Pop-up รหัสผ่าน */
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeInSlide 0.2s ease-out forwards;
+}
+
+/* ตั้งค่า font-mono ให้รหัสผ่านดูอ่านง่ายขึ้น */
+.font-mono {
+    font-family: 'Courier New', Courier, monospace;
+}
