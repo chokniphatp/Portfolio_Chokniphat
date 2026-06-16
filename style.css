@@ -298,6 +298,12 @@ body {
     box-shadow: none;
 }
 
+.profile-avatar-wrap {
+    position: relative;
+    display: inline-block;
+    animation: profileFloat 6s ease-in-out infinite;
+}
+
 .profile-frame {
     position: relative;
     width: 18rem;
@@ -305,7 +311,6 @@ body {
     border: 9px solid #fff;
     outline: 1px solid rgba(31, 58, 147, 0.16);
     box-shadow: 0 28px 70px rgba(15, 23, 42, 0.18);
-    animation: profileFloat 6s ease-in-out infinite;
 }
 
 .profile-frame::before {
@@ -460,11 +465,9 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .profile-frame {
+.profile-frame {
         width: 15rem;
-        height: 15rem;
-        animation: none;
-    }
+        height: 15rem;}
 
     .experience-card::before { display: none; }
 
@@ -538,7 +541,7 @@ body {
         margin-top: 0;
     }
 
-    .profile-frame {
+.profile-frame {
         width: 14.5rem;
         height: 14.5rem;
     }
@@ -670,5 +673,177 @@ body {
     .hero-focus span {
         flex: 1 1 100%;
         justify-content: center;
+    }
+}
+
+/* Hero refresh: denser first view and stronger brand mark */
+#navbar .brand-mark {
+    font-size: clamp(1.55rem, 1.8vw, 1.9rem) !important;
+    line-height: 1;
+    font-weight: 800 !important;
+}
+
+#navbar .brand-mark::after {
+    width: 48px;
+    bottom: -10px;
+    height: 4px;
+}
+
+#navbar .max-w-6xl {
+    padding-top: 1.05rem;
+    padding-bottom: 1.05rem;
+}
+
+.hero-section {
+    min-height: 84vh;
+    padding-bottom: 4.5rem !important;
+}
+
+.hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 12px;
+    margin-bottom: 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(31, 58, 147, 0.14);
+    background: rgba(238, 244, 255, 0.78);
+    color: var(--portfolio-blue);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.hero-focus span i {
+    margin-right: 8px;
+    font-size: 0.9rem;
+}
+
+.hero-snapshot {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 760px;
+}
+
+.hero-snapshot > div {
+    min-height: 118px;
+    padding: 16px;
+    border: 1px solid var(--portfolio-line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 16px 34px rgba(31, 58, 147, 0.08);
+}
+
+.hero-snapshot i {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    color: #fff;
+    background: var(--portfolio-blue);
+    font-size: 0.98rem;
+}
+
+.hero-snapshot strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--portfolio-blue-dark);
+    font-size: 0.96rem;
+    line-height: 1.25;
+}
+
+.hero-snapshot span {
+    display: block;
+    color: var(--portfolio-muted);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.profile-showcase {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    gap: 18px;
+}
+
+.profile-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1px solid var(--portfolio-line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--portfolio-blue-dark);
+    font-weight: 700;
+    box-shadow: 0 14px 32px rgba(31, 58, 147, 0.08);
+}
+
+.profile-note i {
+    color: var(--portfolio-blue);
+}
+
+@media (max-width: 900px) {
+    .hero-snapshot {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-snapshot > div {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    #navbar .brand-mark {
+        font-size: 1.4rem !important;
+    }
+
+    .hero-section {
+        min-height: auto;
+        padding-bottom: 3.5rem !important;
+    }
+
+    .hero-kicker,
+    .hero-snapshot {
+        max-width: calc(100vw - 2rem);
+    }
+
+    .hero-snapshot {
+        width: 100%;
+    }
+}
+.university-badge {
+    position: absolute;
+    top: 2px;
+    right: calc(50% - 9.5rem);
+    width: 66px;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #fff;
+    border: 4px solid #fff;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(31, 58, 147, 0.14);
+    z-index: 2;
+}
+
+.university-badge img {
+    width: 74%;
+    height: 74%;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .university-badge {
+        width: 58px;
+        height: 58px;
+        top: -2px;
+        right: calc(50% - 7.9rem);
     }
 }

@@ -36,6 +36,71 @@
             object-fit: contain;
             background: #ffffff;
         }
+        .vpn-gallery-heading {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .vpn-gallery-heading span {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: #1f3a93;
+            flex: 0 0 auto;
+        }
+        .vpn-gallery-heading p {
+            color: #1f3a93;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+        .vpn-gallery-heading h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #111827;
+            line-height: 1.25;
+        }
+        .vpn-gallery-group {
+            padding-top: 4px;
+        }
+        .vpn-ping-combo {
+            overflow: hidden;
+        }
+        .vpn-ping-strip {
+            display: flex;
+            gap: 14px;
+            overflow-x: auto;
+            overscroll-behavior-inline: contain;
+            padding: 14px;
+            background: #f8fbff;
+            scroll-snap-type: x proximity;
+        }
+        .vpn-ping-strip img {
+            flex: 0 0 44%;
+            width: 44%;
+            height: 300px !important;
+            object-fit: contain !important;
+            background: #fff;
+            border: 1px solid #dbe5f5;
+            border-radius: 8px;
+            scroll-snap-align: start;
+        }
+        @media (max-width: 768px) {
+            .vpn-gallery-heading {
+                align-items: flex-start;
+            }
+            .vpn-ping-strip img {
+                flex-basis: 82%;
+                width: 82%;
+                height: 230px !important;
+            }
+        }
         @media (max-width: 768px) {
             #vpn-gallery .vpn-image-card img { height: auto; }
         }        .vpn-stat strong { color: #1f3a93; }
@@ -130,34 +195,80 @@
                             <p class="text-gray-600">ย้ายจาก local VM ไป AWS EC2 เพื่อให้ระบบมี public IP และรับ connection จาก external network ได้</p>
                         </div>
                         <div class="vpn-step relative pl-14">
-                            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"><i class="fa-solid fa-chart-line"></i></div>
                             <h3 class="font-bold text-lg mb-1">Centralized monitoring</h3>
                             <p class="text-gray-600">เพิ่ม Logstash, Elasticsearch และ Kibana เพื่อรวม log จาก Keycloak, Flask และ WireGuard ไว้ใน dashboard เดียว</p>
                         </div>
                     </div>
                 </div>
                 <div class="vpn-panel p-5">
-                    <img src="images_vpn/vpn-user-dashboard.png" alt="VPN user dashboard UI" class="rounded-lg border border-blue-100 mb-4 cursor-pointer" onclick="openLightbox('vpn-gallery', 1)">
+                    <img src="images_vpn/vpn-user-dashboard.png" alt="VPN user dashboard UI" class="rounded-lg border border-blue-100 mb-4 cursor-pointer" onclick="openLightbox('vpn-gallery', 2)">
                     <div class="grid sm:grid-cols-2 gap-4">
                         <img src="images_vpn/vpn-user-config.png" alt="VPN config UI" class="rounded-lg border border-blue-100 cursor-pointer" onclick="openLightbox('vpn-gallery', 2)">
-                        <img src="images_vpn/vpn-qr-config.png" alt="WireGuard QR config UI" class="rounded-lg border border-blue-100 cursor-pointer" onclick="openLightbox('vpn-gallery', 3)">
+                        <img src="images_vpn/vpn-qr-modal.png" alt="WireGuard QR modal" class="rounded-lg border border-blue-100 cursor-pointer" onclick="openLightbox('vpn-gallery', 2)">
                     </div>
                 </div>
             </div>
 
             <section class="mb-16">
-                <p class="text-blue-700 font-extrabold text-sm mb-2 uppercase text-center">Evidence From Report</p>
+                <p class="text-blue-700 font-extrabold text-sm mb-2 uppercase text-center">Project Screenshots</p>
                 <h2 class="text-3xl font-bold mb-8 text-center">ภาพประกอบจากโปรเจกต์</h2>
-                <div id="vpn-gallery" class="grid md:grid-cols-3 gap-5">
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 0)"><img src="images_vpn/vpn-architecture.png" alt="Architecture"><figcaption class="p-4 text-sm font-semibold text-gray-600">Final architecture</figcaption></figure>
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 1)"><img src="images_vpn/vpn-user-dashboard.png" alt="User dashboard"><figcaption class="p-4 text-sm font-semibold text-gray-600">User dashboard</figcaption></figure>
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 2)"><img src="images_vpn/vpn-user-config.png" alt="Config page"><figcaption class="p-4 text-sm font-semibold text-gray-600">Config download</figcaption></figure>
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 3)"><img src="images_vpn/vpn-qr-config.png" alt="QR code"><figcaption class="p-4 text-sm font-semibold text-gray-600">QR onboarding</figcaption></figure>
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 4)"><img src="images_vpn/vpn-admin-dashboard.png" alt="Admin dashboard"><figcaption class="p-4 text-sm font-semibold text-gray-600">Admin dashboard</figcaption></figure>
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 5)"><img src="images_vpn/vpn-admin-logs.png" alt="Admin log monitoring"><figcaption class="p-4 text-sm font-semibold text-gray-600">Log monitoring</figcaption></figure>
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 6)"><img src="images_vpn/vpn-login-page.png" alt="Login and MFA"><figcaption class="p-4 text-sm font-semibold text-gray-600">Login + MFA</figcaption></figure>
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 7)"><img src="images_vpn/vpn-mobile-tablet.png" alt="Mobile and tablet test"><figcaption class="p-4 text-sm font-semibold text-gray-600">Multi-device test</figcaption></figure>
-                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 8)"><img src="images_vpn/vpn-connectivity-test.png" alt="Connectivity test"><figcaption class="p-4 text-sm font-semibold text-gray-600">Remote access test</figcaption></figure>
+                <div id="vpn-gallery" class="space-y-10">
+<div class="vpn-gallery-group">
+                        <div class="vpn-gallery-heading">
+                            <span><i class="fa-solid fa-user-shield"></i></span>
+                            <div>
+                                <p>User Side</p>
+                                <h3>Authentication, config download, and device onboarding</h3>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-5">
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 0)"><img src="images_vpn/vpn-login-page.png" alt="Login page"><figcaption class="p-4 text-sm font-semibold text-gray-600">Login with Keycloak</figcaption></figure>
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 0)"><img src="images_vpn/vpn-otp-page.png" alt="OTP verification"><figcaption class="p-4 text-sm font-semibold text-gray-600">OTP verification</figcaption></figure>
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 2)"><img src="images_vpn/vpn-user-dashboard.png" alt="User dashboard"><figcaption class="p-4 text-sm font-semibold text-gray-600">User dashboard</figcaption></figure>
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 2)"><img src="images_vpn/vpn-user-config.png" alt="VPN config page"><figcaption class="p-4 text-sm font-semibold text-gray-600">Config download</figcaption></figure>
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 2)"><img src="images_vpn/vpn-qr-modal.png" alt="WireGuard QR modal"><figcaption class="p-4 text-sm font-semibold text-gray-600">QR onboarding</figcaption></figure>
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 5)"><img src="images_vpn/vpn-wireguard-mobile-list.png" alt="WireGuard mobile list"><figcaption class="p-4 text-sm font-semibold text-gray-600">WireGuard mobile profiles</figcaption></figure>
+                        </div>
+                    </div>
+
+                    <div class="vpn-gallery-group">
+                        <div class="vpn-gallery-heading">
+                            <span><i class="fa-solid fa-user-gear"></i></span>
+                            <div>
+                                <p>Admin Side</p>
+                                <h3>User management, approval workflow, and centralized logs</h3>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-5">
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 6)"><img src="images_vpn/vpn-admin-dashboard.png" alt="Admin dashboard"><figcaption class="p-4 text-sm font-semibold text-gray-600">Admin dashboard</figcaption></figure>
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 7)"><img src="images_vpn/vpn-admin-requests.png" alt="Pending requests"><figcaption class="p-4 text-sm font-semibold text-gray-600">Request approval</figcaption></figure>
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 6)"><img src="images_vpn/vpn-admin-create-user.png" alt="Create user"><figcaption class="p-4 text-sm font-semibold text-gray-600">Create user</figcaption></figure>
+                            <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 7)"><img src="images_vpn/vpn-log-monitoring.png" alt="Log monitoring"><figcaption class="p-4 text-sm font-semibold text-gray-600">Centralized log monitoring</figcaption></figure>
+                        </div>
+                    </div>
+
+                    <div class="vpn-gallery-group">
+                        <div class="vpn-gallery-heading">
+                            <span><i class="fa-solid fa-wifi"></i></span>
+                            <div>
+                                <p>Connectivity Test</p>
+                                <h3>Mobile and tablet ping verification</h3>
+                            </div>
+                        </div>
+                        <figure class="vpn-image-card vpn-ping-combo">
+                            <div class="vpn-ping-strip" aria-label="Mobile and tablet ping screenshots">
+                                <img src="images_vpn/vpn-ping-mobile-server.png" alt="Mobile ping file server" class="cursor-pointer" onclick="openLightbox('vpn-gallery', 6)">
+                                <img src="images_vpn/vpn-ping-mobile-service.png" alt="Mobile ping internal service" class="cursor-pointer" onclick="openLightbox('vpn-gallery', 11)">
+                                <img src="images_vpn/vpn-ping-tablet-server.png" alt="Tablet ping file server" class="cursor-pointer" onclick="openLightbox('vpn-gallery', 12)">
+                                <img src="images_vpn/vpn-ping-tablet-service.png" alt="Tablet ping internal service" class="cursor-pointer" onclick="openLightbox('vpn-gallery', 13)">
+                            </div>
+                            <figcaption class="p-4 text-sm font-semibold text-gray-600 flex items-center justify-between gap-3">
+                                <span>Mobile / Tablet ping tests</span>
+                                <span class="text-blue-700 text-xs font-bold">Scroll to view</span>
+                            </figcaption>
+                        </figure>
+                    </div>
                 </div>
             </section>
 
