@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure VPN System - Chokniphat Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .vpn-hero {
+            background: radial-gradient(circle at 12% 12%, rgba(31, 58, 147, 0.10), transparent 30%), linear-gradient(135deg, #f8fbff, #eef4ff);
+        }
+        .vpn-panel {
+            border: 1px solid #dbe5f5;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
+        }
+        .vpn-image-card {
+            border: 1px solid #dbe5f5;
+            border-radius: 8px;
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+        }
+        .vpn-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        #vpn-gallery .vpn-image-card img {
+            height: 230px;
+            object-fit: contain;
+            background: #ffffff;
+        }
+        @media (max-width: 768px) {
+            #vpn-gallery .vpn-image-card img { height: auto; }
+        }        .vpn-stat strong { color: #1f3a93; }
+        .vpn-step::before {
+            content: "";
+            position: absolute;
+            left: 19px;
+            top: 42px;
+            bottom: -24px;
+            width: 2px;
+            background: #dbe5f5;
+        }
+        .vpn-step:last-child::before { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+    <nav class="bg-white/90 backdrop-blur border-b border-blue-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html#projects" class="text-blue-700 hover:text-blue-900 transition flex items-center font-semibold">
+                <i class="fa-solid fa-chevron-left mr-2"></i> กลับไปหน้า Projects
+            </a>
+            <a href="index.html" class="brand-mark text-xl font-bold scg-blue-text">Portfolio.</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="vpn-hero px-4 py-16 md:py-20">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-[1.02fr_0.98fr] gap-10 items-center">
+                <div>
+                    <p class="text-blue-700 font-extrabold text-sm mb-3 uppercase">Senior Project</p>
+                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-5 scg-blue-text">Secure, Mobile-ready VPN Platform</h1>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-7">
+                        ออกแบบกระบวนการบูรณาการระบบ VPN ที่ปลอดภัย รองรับหลายอุปกรณ์ และลดข้อจำกัดด้านค่า license โดยใช้ open-source components ร่วมกับ cloud deployment
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-bold border border-blue-100">WireGuard</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-bold border border-blue-100">Keycloak MFA</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-bold border border-blue-100">Flask</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-bold border border-blue-100">AWS EC2</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-bold border border-blue-100">ELK Stack</span>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="vpn-stat vpn-panel p-4"><strong class="text-2xl block">0 THB</strong><span class="text-sm text-gray-500">Software licensing</span></div>
+                        <div class="vpn-stat vpn-panel p-4"><strong class="text-2xl block">3+</strong><span class="text-sm text-gray-500">Device types tested</span></div>
+                        <div class="vpn-stat vpn-panel p-4"><strong class="text-2xl block">90.91%</strong><span class="text-sm text-gray-500">Usability score</span></div>
+                        <div class="vpn-stat vpn-panel p-4"><strong class="text-2xl block">2,800</strong><span class="text-sm text-gray-500">THB prototype cost</span></div>
+                    </div>
+                </div>
+                <div class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 0)">
+                    <img src="images_vpn/vpn-architecture.png" alt="Final VPN architecture diagram">
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-3 gap-6 mb-14">
+                <article class="vpn-panel p-6">
+                    <div class="text-blue-600 text-2xl mb-4"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <h2 class="font-bold text-xl mb-3">Problem</h2>
+                    <p class="text-gray-600 leading-relaxed">องค์กรมีข้อจำกัดจาก VPN license เดิม โดยเฉพาะการใช้งานผ่านมือถือหรือแท็บเล็ตที่ต้องเพิ่มค่าใช้จ่าย ทำให้ remote work ไม่ยืดหยุ่นเท่าที่ควร</p>
+                </article>
+                <article class="vpn-panel p-6">
+                    <div class="text-blue-600 text-2xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h2 class="font-bold text-xl mb-3">Solution</h2>
+                    <p class="text-gray-600 leading-relaxed">รวม Flask, Keycloak, WireGuard และ PostgreSQL เป็น platform เดียว ให้ผู้ใช้ login ด้วย MFA แล้วสร้าง/ดาวน์โหลด VPN config หรือสแกน QR ได้</p>
+                </article>
+                <article class="vpn-panel p-6">
+                    <div class="text-blue-600 text-2xl mb-4"><i class="fa-solid fa-chart-line"></i></div>
+                    <h2 class="font-bold text-xl mb-3">Result</h2>
+                    <p class="text-gray-600 leading-relaxed">ย้ายขึ้น AWS EC2 เพื่อแก้ CG-NAT, ทดสอบ remote access จากภายนอกสำเร็จ, รองรับหลายอุปกรณ์ และเพิ่ม ELK สำหรับ centralized logging</p>
+                </article>
+            </div>
+
+            <div class="grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-start mb-16">
+                <div>
+                    <p class="text-blue-700 font-extrabold text-sm mb-2 uppercase">Design Process</p>
+                    <h2 class="text-3xl font-bold mb-6">สิ่งที่ระบบทำได้</h2>
+                    <div class="space-y-6">
+                        <div class="vpn-step relative pl-14">
+                            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"><i class="fa-solid fa-user-lock"></i></div>
+                            <h3 class="font-bold text-lg mb-1">Secure authentication</h3>
+                            <p class="text-gray-600">ผู้ใช้ต้องผ่าน username/password และ OTP จาก Keycloak ก่อนเข้าถึงไฟล์ VPN configuration</p>
+                        </div>
+                        <div class="vpn-step relative pl-14">
+                            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"><i class="fa-solid fa-qrcode"></i></div>
+                            <h3 class="font-bold text-lg mb-1">Auto VPN configuration</h3>
+                            <p class="text-gray-600">ระบบสร้าง WireGuard peer, จัดสรร IP, สร้าง .conf file และแสดง QR code สำหรับ mobile onboarding</p>
+                        </div>
+                        <div class="vpn-step relative pl-14">
+                            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"><i class="fa-solid fa-cloud"></i></div>
+                            <h3 class="font-bold text-lg mb-1">Cloud remote access</h3>
+                            <p class="text-gray-600">ย้ายจาก local VM ไป AWS EC2 เพื่อให้ระบบมี public IP และรับ connection จาก external network ได้</p>
+                        </div>
+                        <div class="vpn-step relative pl-14">
+                            <div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                            <h3 class="font-bold text-lg mb-1">Centralized monitoring</h3>
+                            <p class="text-gray-600">เพิ่ม Logstash, Elasticsearch และ Kibana เพื่อรวม log จาก Keycloak, Flask และ WireGuard ไว้ใน dashboard เดียว</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="vpn-panel p-5">
+                    <img src="images_vpn/vpn-user-dashboard.png" alt="VPN user dashboard UI" class="rounded-lg border border-blue-100 mb-4 cursor-pointer" onclick="openLightbox('vpn-gallery', 1)">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <img src="images_vpn/vpn-user-config.png" alt="VPN config UI" class="rounded-lg border border-blue-100 cursor-pointer" onclick="openLightbox('vpn-gallery', 2)">
+                        <img src="images_vpn/vpn-qr-config.png" alt="WireGuard QR config UI" class="rounded-lg border border-blue-100 cursor-pointer" onclick="openLightbox('vpn-gallery', 3)">
+                    </div>
+                </div>
+            </div>
+
+            <section class="mb-16">
+                <p class="text-blue-700 font-extrabold text-sm mb-2 uppercase text-center">Evidence From Report</p>
+                <h2 class="text-3xl font-bold mb-8 text-center">ภาพประกอบจากโปรเจกต์</h2>
+                <div id="vpn-gallery" class="grid md:grid-cols-3 gap-5">
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 0)"><img src="images_vpn/vpn-architecture.png" alt="Architecture"><figcaption class="p-4 text-sm font-semibold text-gray-600">Final architecture</figcaption></figure>
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 1)"><img src="images_vpn/vpn-user-dashboard.png" alt="User dashboard"><figcaption class="p-4 text-sm font-semibold text-gray-600">User dashboard</figcaption></figure>
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 2)"><img src="images_vpn/vpn-user-config.png" alt="Config page"><figcaption class="p-4 text-sm font-semibold text-gray-600">Config download</figcaption></figure>
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 3)"><img src="images_vpn/vpn-qr-config.png" alt="QR code"><figcaption class="p-4 text-sm font-semibold text-gray-600">QR onboarding</figcaption></figure>
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 4)"><img src="images_vpn/vpn-admin-dashboard.png" alt="Admin dashboard"><figcaption class="p-4 text-sm font-semibold text-gray-600">Admin dashboard</figcaption></figure>
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 5)"><img src="images_vpn/vpn-admin-logs.png" alt="Admin log monitoring"><figcaption class="p-4 text-sm font-semibold text-gray-600">Log monitoring</figcaption></figure>
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 6)"><img src="images_vpn/vpn-login-page.png" alt="Login and MFA"><figcaption class="p-4 text-sm font-semibold text-gray-600">Login + MFA</figcaption></figure>
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 7)"><img src="images_vpn/vpn-mobile-tablet.png" alt="Mobile and tablet test"><figcaption class="p-4 text-sm font-semibold text-gray-600">Multi-device test</figcaption></figure>
+                    <figure class="vpn-image-card cursor-pointer" onclick="openLightbox('vpn-gallery', 8)"><img src="images_vpn/vpn-connectivity-test.png" alt="Connectivity test"><figcaption class="p-4 text-sm font-semibold text-gray-600">Remote access test</figcaption></figure>
+                </div>
+            </section>
+
+            <section class="grid lg:grid-cols-[1fr_340px] gap-8 items-start">
+                <div class="vpn-panel p-7">
+                    <h2 class="text-2xl font-bold mb-5">สรุปผลการประเมิน</h2>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="border border-blue-100 rounded-lg p-4"><strong class="block text-blue-800 mb-1">MFA Verified</strong><span class="text-gray-600 text-sm">Login + OTP ก่อนรับ VPN config</span></div>
+                        <div class="border border-blue-100 rounded-lg p-4"><strong class="block text-blue-800 mb-1">Multi-device</strong><span class="text-gray-600 text-sm">ทดสอบ laptop, mobile และ tablet</span></div>
+                        <div class="border border-blue-100 rounded-lg p-4"><strong class="block text-blue-800 mb-1">Remote Access</strong><span class="text-gray-600 text-sm">เชื่อมต่อจาก external network ได้สำเร็จ</span></div>
+                        <div class="border border-blue-100 rounded-lg p-4"><strong class="block text-blue-800 mb-1">Usability 90.91%</strong><span class="text-gray-600 text-sm">สูงกว่าเกณฑ์ 80% ที่ตั้งไว้</span></div>
+                    </div>
+                </div>
+                <aside class="vpn-panel p-7">
+                    <h3 class="font-bold text-xl mb-4">Tech Stack</h3>
+                    <div class="flex flex-wrap gap-2 mb-7">
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">WireGuard</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">Keycloak</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">Flask</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">PostgreSQL</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">AWS EC2</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">Logstash</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">Elasticsearch</span>
+                        <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">Kibana</span>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">My Contribution</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">มีส่วนร่วมทั้งฝั่ง Network Engineering และ Cyber Security โดยออกแบบ workflow การเชื่อมต่อ VPN, การยืนยันตัวตนด้วย MFA, การจัดการสิทธิ์ผู้ใช้ และพัฒนา simulated internal service เพื่อสาธิตการเข้าถึงระบบภายในหลังเชื่อมต่อ VPN ตามข้อจำกัดด้าน security policy ขององค์กร</p>
+                </aside>
+            </section>
+        </section>
+    </main>
+
+    <footer class="py-12 border-t text-center text-gray-500">
+        <p>© 2026 Chokniphat Pitakkorpol. All rights reserved.</p>
+    </footer>
+
+    <div id="imageModal" class="hidden fixed inset-0 bg-black/95 z-[100] flex flex-col items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-5 right-5 text-white text-5xl hover:text-gray-300 transition z-[110]">&times;</button>
+        <button onclick="changeLightboxImage(-1)" class="absolute left-4 text-white text-5xl p-2 hover:bg-white/10 rounded-full transition z-[110]"><i class="fa-solid fa-chevron-left"></i></button>
+        <img id="modalImg" src="" class="max-w-full max-h-[85vh] object-contain shadow-2xl transition-all duration-300">
+        <button onclick="changeLightboxImage(1)" class="absolute right-4 text-white text-5xl p-2 hover:bg-white/10 rounded-full transition z-[110]"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

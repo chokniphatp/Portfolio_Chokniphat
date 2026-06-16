@@ -102,7 +102,8 @@ function updateModalImage() {
 // เพิ่มการรองรับการกดปุ่มบนคีย์บอร์ด (Esc เพื่อปิด, ลูกศรเพื่อเปลี่ยนรูป)
 document.addEventListener('keydown', (e) => {
     // เช็กว่า Modal กำลังเปิดอยู่หรือไม่
-    if (!document.getElementById('imageModal').classList.contains('active')) return;
+    const activeModal = document.getElementById('imageModal');
+    if (!activeModal || !activeModal.classList.contains('active')) return;
 
     if (e.key === "Escape") closeLightbox();
     if (e.key === "ArrowRight") changeLightboxImage(1);
@@ -124,6 +125,7 @@ function toggleLoginPopup() {
 // ปิด Pop-up เมื่อคลิกข้างนอกหน้าต่างข้อมูล
 document.addEventListener('click', function(event) {
     const popup = document.getElementById('loginPopup');
+    if (!popup) return;
     const btn = event.target.closest('button');
     
     // ถ้าคลิกข้างนอก และ Pop-up แสดงอยู่ ให้ซ่อนมัน
@@ -132,3 +134,37 @@ document.addEventListener('click', function(event) {
     }
 });
 
+
+// Portfolio refresh interactions
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.16 });
+
+document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+    revealObserver.observe(element);
+});
+
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
+
+const setActiveNav = () => {
+    let current = '';
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navAnchors.forEach((anchor) => {
+        anchor.classList.toggle('active', anchor.getAttribute('href') === `#${current}`);
+    });
+};
+
+window.addEventListener('scroll', setActiveNav);
+setActiveNav();
